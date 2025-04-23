@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cuestionario Glowy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
@@ -23,7 +23,6 @@
       overflow: hidden;
     }
 
-    /* TRANSICIÓN DE ENTRADA */
     .page-transition {
       position: fixed;
       top: 0;
@@ -36,13 +35,8 @@
     }
 
     @keyframes fadeOut {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-        visibility: hidden;
-      }
+      0% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
     }
 
     .main {
@@ -75,7 +69,7 @@
     h2 {
       text-align: center;
       color: #00ffff;
-      font-size: 2.3em;
+      font-size: 1.8em;
       margin-bottom: 30px;
       text-shadow: 0 0 10px #00ffff;
     }
@@ -193,11 +187,46 @@
       border: 2px solid red;
       background: rgba(255, 0, 0, 0.1);
     }
+
+    #mensajeFinal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      color: #00ffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+      z-index: 99999;
+      text-align: center;
+      padding: 20px;
+      display: none;
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
+
+    #mensajeFinal button {
+      margin-top: 25px;
+      padding: 12px 20px;
+      font-size: 1em;
+      background: #00ffff;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #mensajeFinal button:hover {
+      background: #39fff2;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Div que se desvanece al entrar -->
   <div class="page-transition"></div>
 
   <div class="main">
@@ -205,36 +234,56 @@
       <h2>✨ Cuestionario 1 ✨</h2>
 
       <div class="question">
-        <p>1. ¿Cuál es el objetivo principal del estado de resultados?</p>
-        <label><input type="radio" name="q1" value="a"> Mostrar el balance general</label>
-        <label><input type="radio" name="q1" value="b"> Calcular utilidades o pérdidas</label>
-        <label><input type="radio" name="q1" value="c"> Reportar inventarios</label>
+        <p>1. ¿Qué representa el Estado de Resultados?</p>
+        <label><input type="radio" name="q1" value="a" /> a) Los activos de una empresa</label>
+        <label><input type="radio" name="q1" value="b" /> b) El desempeño financiero de un periodo</label>
+        <label><input type="radio" name="q1" value="c" /> c) El presupuesto futuro</label>
       </div>
 
       <div class="question">
-        <p>2. ¿Qué elemento NO pertenece al estado de resultados?</p>
-        <label><input type="radio" name="q2" value="a"> Ingresos</label>
-        <label><input type="radio" name="q2" value="b"> Costos</label>
-        <label><input type="radio" name="q2" value="c"> Activos fijos</label>
+        <p>2. ¿Cuál es el orden correcto de los elementos en un Estado de Resultados?</p>
+        <label><input type="radio" name="q2" value="a" /> a) Gastos, Ventas, Utilidad</label>
+        <label><input type="radio" name="q2" value="b" /> b) Ventas, Gastos, Utilidad</label>
+        <label><input type="radio" name="q2" value="c" /> c) Activos, Pasivos, Capital</label>
       </div>
 
       <div class="question">
-        <p>3. ¿Qué mide el estado de resultados?</p>
-        <label><input type="radio" name="q3" value="a"> El flujo de caja</label>
-        <label><input type="radio" name="q3" value="b"> La rentabilidad de una empresa</label>
-        <label><input type="radio" name="q3" value="c"> El número de empleados</label>
+        <p>3. ¿Qué representa la utilidad neta?</p>
+        <label><input type="radio" name="q3" value="a" /> a) Los gastos totales</label>
+        <label><input type="radio" name="q3" value="b" /> b) El capital invertido</label>
+        <label><input type="radio" name="q3" value="c" /> c) El resultado final después de todos los ingresos y egresos</label>
+      </div>
+
+      <div class="question">
+        <p>4. ¿Cuál es una función principal del Estado de Resultados?</p>
+        <label><input type="radio" name="q4" value="a" /> a) Mostrar los recursos físicos</label>
+        <label><input type="radio" name="q4" value="b" /> b) Calcular el precio de venta</label>
+        <label><input type="radio" name="q4" value="c" /> c) Medir la rentabilidad</label>
+      </div>
+
+      <div class="question">
+        <p>5. ¿Cuál es una característica del Estado de Resultados?</p>
+        <label><input type="radio" name="q5" value="a" /> a) Se basa en estimaciones a futuro</label>
+        <label><input type="radio" name="q5" value="b" /> b) Refleja ingresos y egresos reales del periodo</label>
+        <label><input type="radio" name="q5" value="c" /> c) Solo incluye ingresos proyectados</label>
       </div>
 
       <button type="submit" class="submit-btn">CALIFICAR</button>
     </form>
   </div>
 
+  <div id="mensajeFinal"></div>
+
   <script>
     const respuestasCorrectas = {
       q1: "b",
-      q2: "c",
-      q3: "b"
+      q2: "b",
+      q3: "c",
+      q4: "c",
+      q5: "b"
     };
+
+    const mensajeFinal = document.getElementById("mensajeFinal");
 
     document.getElementById("cuestionarioForm").addEventListener("submit", function (e) {
       e.preventDefault();
@@ -276,7 +325,15 @@
       }
 
       setTimeout(() => {
-        alert(`¡Resultado final! ✅ ${aciertos} de ${total} respuestas correctas.`);
+        let mensaje = '';
+        if (aciertos >= 3) {
+          mensaje = `<h1>🎉 ¡Felicidades! 🎉</h1><p>Obtuviste ${aciertos} de ${total} respuestas correctas.</p>`;
+        } else {
+          mensaje = `<h1>😥 ¡Sigue intentándolo!</h1><p>Obtuviste ${aciertos} de ${total}. ¡Tú puedes mejorar! 💪</p>`;
+        }
+
+        mensajeFinal.innerHTML = mensaje + '<button onclick="location.reload()">Volver a intentar</button>';
+        mensajeFinal.style.display = 'flex';
       }, 300);
     });
   </script>
